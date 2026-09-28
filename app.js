@@ -16,6 +16,9 @@ const themeToggle = document.getElementById("theme-toggle");
 const searchInput = document.getElementById("search-input");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const noResults = document.getElementById("no-results");
+const statTotal = document.getElementById("stat-total");
+const statCompleted = document.getElementById("stat-completed");
+const statRemaining = document.getElementById("stat-remaining");
 
 let tasks = loadTasks();
 // View state only; not saved, so the stored task format is unchanged.
@@ -106,8 +109,17 @@ function visibleTasks() {
   });
 }
 
+function renderStats() {
+  // Counts come from the full list, so filters and search never change them.
+  const completed = tasks.filter((task) => task.done).length;
+  statTotal.textContent = String(tasks.length);
+  statCompleted.textContent = String(completed);
+  statRemaining.textContent = String(tasks.length - completed);
+}
+
 function render() {
   list.innerHTML = "";
+  renderStats();
 
   const shown = visibleTasks();
   emptyState.classList.toggle("hidden", tasks.length !== 0);
