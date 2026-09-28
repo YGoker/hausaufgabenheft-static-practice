@@ -69,6 +69,21 @@
     <main class="card homework-panel" aria-labelledby="homework-title">
       <h2 id="homework-title" class="panel-title">Homework</h2>
 
+      <dl class="stats" aria-label="Homework summary">
+        <div class="stat">
+          <dt>Total</dt>
+          <dd id="stat-total">0</dd>
+        </div>
+        <div class="stat">
+          <dt>Completed</dt>
+          <dd id="stat-completed">0</dd>
+        </div>
+        <div class="stat">
+          <dt>Remaining</dt>
+          <dd id="stat-remaining">0</dd>
+        </div>
+      </dl>
+
       <form id="add-form" class="add-form">
         <label for="task-input" class="visually-hidden">New homework task</label>
         <input

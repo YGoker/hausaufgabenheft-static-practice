@@ -371,6 +371,38 @@ h1 {
   margin-bottom: var(--space-4);
 }
 
+/* Stats: counts across all tasks */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  min-width: 0;
+}
+
+.stat dt {
+  font-size: var(--text-s);
+  line-height: var(--leading-s);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+}
+
+.stat dd {
+  font-size: var(--text-l);
+  line-height: var(--leading-l);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
 .add-form {
   display: flex;
   gap: var(--space-2);
